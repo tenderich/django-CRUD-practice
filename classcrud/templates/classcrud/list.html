@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+</head>
+<body>
+    <a href=" {% url 'new' %} ">추가</a>
+    <br>
+
+    <!-- object_list = 지정한 모델로 만들어진 모든 객체들의 목록 -->
+ 
+    {% for blog in blog_list %}
+        <h2>{{blog.title}}</h2>
+        <h5>{{blog.created_at}}</h5>
+        <p>{{blog.body}}</p>
+        <a href=" {% url 'detail' blog.id %}">자세히보기</a>
+        <a href=" {% url 'change' blog.id %}">수정</a>
+        <a href=" {% url 'del' blog.id %}">삭제</a>
+        <hr>
+    {% endfor %}
+        
+</body>
+</html>

@@ -24,5 +24,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', funccrud.views.welcome, name="welcome"),
     path('funccrud/', include(funccrud.urls)),
-    
+    path('classcrud/', include(classcrud.urls)),
 ]
