@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD 연습</title>
+</head>
+<body>
+    <!-- 글쓰기 버튼 -->
+    <a href=" {% url 'newblog' %} ">글쓰기</a>
+
+    <!-- 블로그 글 띄우는 부분 -->
+    {% for blog in blogs %}
+
+        <h2>{{blog.title}}</h2>
+        <h4>{{blog.pub_date}}</h4>
+        <p>{{blog.body}}</p>
+        <a href="{% url 'update' blog.id %}">수정</a>
+        <a href="{% url 'delete' blog.id %}">삭제</a>
+        <hr>
+    
+    {% endfor %}
+        
+</body>
+</html>
